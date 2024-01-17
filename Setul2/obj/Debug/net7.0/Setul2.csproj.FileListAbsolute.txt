@@ -1,0 +1,15 @@
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/bin/Debug/net7.0/Setul2
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/bin/Debug/net7.0/Setul2.deps.json
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/bin/Debug/net7.0/Setul2.runtimeconfig.json
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/bin/Debug/net7.0/Setul2.dll
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/bin/Debug/net7.0/Setul2.pdb
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.csproj.AssemblyReference.cache
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.AssemblyInfoInputs.cache
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.AssemblyInfo.cs
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.csproj.CoreCompileInputs.cache
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.dll
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/refint/Setul2.dll
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.pdb
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/Setul2.genruntimeconfig.cache
+/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/Debug/net7.0/ref/Setul2.dll
