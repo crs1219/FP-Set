@@ -10,7 +10,7 @@ class Setul1
 
         switch (optiune)
         {
-            /*case 1:
+            case 1:
                 Problema1();
                 break;
 
@@ -22,7 +22,7 @@ class Setul1
                 Problema3();
                 break;
 
-            case 4:
+            /*case 4:
                 Problema4();
                 break;
 
@@ -140,13 +140,146 @@ class Setul1
         }
     }
 
-    /*static void Problema1() {}
+    static void Problema1()
+    {
+        Console.WriteLine("Calculati suma elementelor unui vector de n numere citite de la tastatura. \nRezultatul se va afisa pe ecran.");
 
-    static void Problema2() {}
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
 
-    static void Problema3() {}
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
 
-    static void Problema4() {}
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // calcul suma elemente vector
+        int suma = 0;
+
+        for (int i = 0; i < n; i++)   // sau for (int i = 0; i < vector.Length; i++)
+        {
+            suma += vector[i];
+        }
+
+        Console.WriteLine($"Suma elementelor vectorului este: {suma}");
+
+        Console.ReadKey();
+    }
+
+    static void Problema2()
+    {
+        Console.WriteLine("Se da un vector cu n elemente si o valoare k. \nSe cere sa se determine prima pozitie din vector pe care apare k. \nDaca k nu apare in vector rezultatul va fi -1. ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Console.WriteLine("Introduceti valoarea k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare 
+        if (k <= 0)
+        {
+            Console.WriteLine("Valoarea k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // cautare pozitie k in vector
+
+        int pozitie = -1;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (vector[i] == k)
+            {
+                pozitie = i;
+                break;
+            }
+        }
+
+        Console.WriteLine($"Pozitia pe care apare k in vector este: {pozitie}");
+
+        Console.ReadKey();
+    }
+
+    static void Problema3()
+    {
+        Console.WriteLine("Sa se determine pozitiile dintr-un vector pe care apar cel mai mic si cel mai mare element al vectorului. \nPentru extra-credit realizati programul efectuand 3n/2 comparatii (in cel mai rau caz). ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // determinare pozitii min si max
+        int pozitieMin = 0;
+        int pozitieMax = 0;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (vector[i] < vector[pozitieMin])
+            {
+                pozitieMin = i;
+            }
+
+            if (vector[i] > vector[pozitieMax])
+            {
+                pozitieMax = i;
+            }
+        }
+
+        Console.WriteLine($"Pozitia pe care apare cel mai mic element din vector este: {pozitieMin}");
+        Console.WriteLine($"Pozitia pe care apare cel mai mare element din vector este: {pozitieMax}");
+
+        Console.ReadKey();
+    }
+
+    /*static void Problema4() {}
 
     static void Problema5() {}
 
