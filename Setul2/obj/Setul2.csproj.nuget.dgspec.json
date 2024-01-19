@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/Setul2.csproj": {}
+    "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul2/Setul2.csproj": {}
   },
   "projects": {
-    "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/Setul2.csproj": {
+    "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul2/Setul2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/Setul2.csproj",
+        "projectUniqueName": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul2/Setul2.csproj",
         "projectName": "Setul2",
-        "projectPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/Setul2.csproj",
+        "projectPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul2/Setul2.csproj",
         "packagesPath": "/Users/cristinanemcea/.nuget/packages/",
-        "outputPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul2/obj/",
+        "outputPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/cristinanemcea/.nuget/NuGet/NuGet.Config"

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul3/Setul3.csproj",
+      "projectUniqueName": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul3/Setul3.csproj",
       "projectName": "Setul3",
-      "projectPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul3/Setul3.csproj",
+      "projectPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul3/Setul3.csproj",
       "packagesPath": "/Users/cristinanemcea/.nuget/packages/",
-      "outputPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/Setul3/obj/",
+      "outputPath": "/Users/cristinanemcea/GITHUB REPOSITORYS/FP-Set/FP-Set/Setul3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/cristinanemcea/.nuget/NuGet/NuGet.Config"

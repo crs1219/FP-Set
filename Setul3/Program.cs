@@ -38,7 +38,7 @@ class Setul1
                 Problema7();
                 break;
 
-            /*case 8:
+            case 8:
                 Problema8();
                 break;
 
@@ -78,7 +78,7 @@ class Setul1
                 Problema17();
                 break;
 
-            case 18:
+            /*case 18:
                 Problema18();
                 break;
 
@@ -504,52 +504,625 @@ class Setul1
         Console.ReadKey();
     }
 
-    /*static void Problema8() {}
+    static void Problema8()
+    {
+        Console.WriteLine("Rotire. Se da un vector cu n elemente. \nRotiti elementele vectorului cu o pozitie spre stanga. \nPrin rotire spre stanga primul element devine ultimul, al doilea devine primul etc. ");
 
-    static void Problema9() {}
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
 
-    static void Problema10() {}
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
 
-    static void Problema11() {}
+        // initializare vector
+        int[] vector = new int[n];
 
-    static void Problema12() {}
+        // preluare elemente vector
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
 
-    static void Problema13() {}
+        // rotire elemente vector spre stanga
+        int[] vectorNou = new int[n];
 
-    static void Problema14() {}
+        for (int i = 0; i < n - 1; i++)
+        {
+            vectorNou[i] = vector[i + 1];   // copiere elemente vector in vector nou de la pozitia i + 1
+        }
 
-    static void Problema15() {}
+        vectorNou[n - 1] = vector[0];
 
-    static void Problema16() {}
+        // afisare vector nou
+        Console.WriteLine("Vectorul nou este: ");
 
-    static void Problema17() {}
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vectorNou[i]} ");
+        }
 
-    static void Problema18() {}
+        Console.ReadKey();
+    }
 
-    static void Problema19() {}
+    static void Problema9()
+    {
+        Console.WriteLine("Rotire k. Se da un vector cu n elemente. \nRotiti elementele vectorului cu k pozitii spre stanga. ");
 
-    static void Problema20() {}
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
 
-    static void Problema21() {}
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
 
-    static void Problema22() {}
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
 
-    static void Problema23() {}
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
 
-    static void Problema24() {}
+        // initializare vector
+        int[] vector = new int[n];
 
-    static void Problema25() {}
+        // preluare elemente vector
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
 
-    static void Problema26() {}
+        // rotire elemente vector spre stanga cu k pozitii
+        int[] vectorNou = new int[n];
 
-    static void Problema27() {}
+        for (int i = 0; i < n - k; i++)
+        {
+            vectorNou[i] = vector[i + k];   // copiere elemente vector in vector nou de la pozitia i + k
+        }
 
-    static void Problema28() {}
+        for (int i = n - k; i < n; i++)
+        {
+            vectorNou[i] = vector[i - n + k];   // copiere elemente vector in vector nou de la pozitia i - n + k
+        }
 
-    static void Problema29() {}
+        // afisare vector nou
+        Console.WriteLine("Vectorul nou este: ");
 
-    static void Problema30() {}
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vectorNou[i]} ");
+        }
 
-    static void Problema31() {}*/
+        Console.ReadKey();
+    }
+
+    static void Problema10()
+    {
+        Console.WriteLine("Cautare binara. Se da un vector cu n elemente sortat in ordine crescatoare. \nSe cere sa se determine pozitia unui element dat k. \nDaca elementul nu se gaseste in vector rezultatul va fi -1. ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // cautare binara pozitie element k in vector
+        int pozitie = -1;
+        int stanga = 0;
+        int dreapta = n - 1;
+
+        while (stanga <= dreapta)
+        {
+            int mijloc = (stanga + dreapta) / 2;   // mijlocul vectorului
+
+            if (vector[mijloc] == k)
+            {
+                pozitie = mijloc;
+                break;
+            }
+
+            if (vector[mijloc] < k)
+            {
+                stanga = mijloc + 1;   // elementul cautat este in dreapta mijlocului
+            }
+
+            if (vector[mijloc] > k)
+            {
+                dreapta = mijloc - 1;   // elementul cautat este in stanga mijlocului
+            }
+        }
+
+        Console.WriteLine($"Pozitia pe care apare elementul k in vector este: {pozitie}");
+
+        Console.ReadKey();
+    }
+
+    static void Problema11()
+    {
+        Console.WriteLine("Se da un numar natural n. \nSe cere sa se afiseze toate numerele prime mai mici sau egale cu n (ciurul lui Eratostene). ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul natural n: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul natural n trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n + 1];
+
+        // initializare vector cu valoarea 1
+        for (int i = 0; i <= n; i++)
+        {
+            vector[i] = 1;
+        }
+
+        // ciurul lui Eratostene
+        for (int i = 2; i <= n; i++)
+        {
+            if (vector[i] == 1)
+            {
+                for (int j = 2; j <= n / i; j++)   // j = 2, 3, 4, ..., n / i
+                {
+                    vector[i * j] = 0;   // elementele multiplu de i sunt egale cu 0
+                }
+            }
+        }
+
+        // afisare numere prime mai mici sau egale cu n
+        Console.WriteLine("Numerele prime mai mici sau egale cu n sunt: ");
+
+        for (int i = 2; i <= n; i++)
+        {
+            if (vector[i] == 1)
+            {
+                Console.Write($"{i} ");
+            }
+        }
+
+        Console.ReadKey();
+    }
+
+    static void Problema12()
+    {
+        Console.WriteLine("Sortare selectie. \nImplementati algoritmul de sortare <Selection Sort>. ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // sortare selectie
+        for (int i = 0; i < n - 1; i++)
+        {
+            int minim = i;
+
+            for (int j = i + 1; j < n; j++)
+            {
+                if (vector[j] < vector[minim])    // vector[j] > vector[minim] <=> vector[j] < vector[minim]
+                {
+                    minim = j;   // minimul curent este mai mare decat elementul curent
+                }
+            }
+
+            int aux = vector[i];
+            vector[i] = vector[minim];
+            vector[minim] = aux;
+        }
+
+        // afisare vector sortat
+        Console.WriteLine("Vectorul sortat este: ");
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vector[i]} ");
+        }
+
+        Console.ReadKey();
+    }
+
+    static void Problema13()
+    {
+        Console.WriteLine("Sortare prin insertie. \nImplementati algoritmul de sortare <Insertion Sort>. ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // sortare prin insertie
+        for (int i = 1; i < n; i++)
+        {
+            int aux = vector[i];   // elementul curent
+            int j = i - 1;      // pozitia elementului anterior
+
+            while (j >= 0 && vector[j] > aux)    // vector[j] > aux <=> vector[j] < aux
+            {
+                vector[j + 1] = vector[j];   // elementul anterior este mai mare decat elementul curent
+                j--;   // pozitia elementului anterior
+            }
+
+            vector[j + 1] = aux;
+        }
+
+        // afisare vector sortat
+        Console.WriteLine("Vectorul sortat este: ");
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vector[i]} ");
+        }
+
+        Console.ReadKey();
+    }
+
+    static void Problema14()
+    {
+        Console.WriteLine("Interschimbati elementele unui vector in asa fel incat la final toate valorile egale cu zero sa ajunga la sfarsit. (nu se vor folosi vectori suplimentari - operatia se va realiza inplace cu un algoritm eficient - se va face o singura parcugere a vectorului). ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // initializare vector cu valoarea 1
+        for (int i = 0; i < n; i++)
+        {
+            vector[i] = 1;
+        }
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // interschimbare elemente vector
+        int pozitie = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (vector[i] != 0)    // elementul curent este diferit de 0
+            {
+                int aux = vector[i];   // interschimbare elemente vector
+                vector[i] = vector[pozitie];   // interschimbare elemente vector
+                vector[pozitie] = aux;   // interschimbare elemente vector
+                pozitie++;
+            }
+        }
+
+        // afisare vector interschimbat
+        Console.WriteLine("Vectorul interschimbat este: ");
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vector[i]} ");
+        }
+
+        Console.ReadKey();
+    }
+
+    static void Problema15()
+    {
+        Console.WriteLine("Modificati un vector prin eliminarea elementelor care se repeta, fara a folosi un alt vector. ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // initializare vector cu valoarea 1
+        for (int i = 0; i < n; i++)
+        {
+            vector[i] = 1;
+        }
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // eliminare elemente vector care se repeta
+        int pozitie = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (vector[i] != 0)    // elementul curent este diferit de 0
+            {
+                int aux = vector[i];   // interschimbare elemente vector
+                vector[i] = vector[pozitie];   // interschimbare elemente vector
+                vector[pozitie] = aux;   // interschimbare elemente vector
+                pozitie++;
+            }
+        }
+
+        // afisare vector eliminat
+        Console.WriteLine("Vectorul eliminat este: ");
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"{vector[i]} ");
+        }
+
+        Console.ReadKey();
+    }
+
+    static void Problema16()
+    {
+        Console.WriteLine("Se da un vector de n numere naturale. \nDeterminati cel mai mare divizor comun al elementelor vectorului.");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul de elemente din vector: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul de pozitii k: ");
+        int k = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul de elemente din vector trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (k <= 0)
+        {
+            Console.WriteLine("Numarul de pozitii k trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        // initializare vector
+        int[] vector = new int[n];
+
+        // initializare vector cu valoarea 1
+        for (int i = 0; i < n; i++)
+        {
+            vector[i] = 1;
+        }
+
+        // preluare elemente vector
+        for (int i = 1; i < n; i++)
+        {
+            Console.WriteLine($"Introduceti elementul {i + 1} din vector: ");
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // determinare cel mai mare divizor comun al elementelor vectorului
+        int c = vector[0];
+
+        for (int i = 1; i < n; i++)
+        {
+            int a = c;
+            int b = vector[i];
+
+            while (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;   // a > b <=> a - b > 0
+                }
+                else
+                {
+                    b = b - a;   // a < b <=> b - a > 0
+                }
+            }
+
+            c = a;
+        }
+
+        Console.WriteLine($"Cel mai mare divizor comun al elementelor vectorului este: {c}");
+
+        Console.ReadKey();
+    }
+
+    static void Problema17()
+    {
+        Console.WriteLine("Se da un numar n in baza 10 si un numar b. 1 < b < 17. \nSa se converteasca si sa se afiseze numarul n in baza b.   ");
+
+        // preluare date de intrare
+        Console.WriteLine("Introduceti numarul n in baza 10: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Introduceti numarul b: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        // validare date de intrare
+        if (n <= 0)
+        {
+            Console.WriteLine("Numarul n in baza 10 trebuie sa fie mai mare decat 0.");
+            return;
+        }
+
+        if (b <= 0 || b >= 17)
+        {
+            Console.WriteLine("Numarul b trebuie sa fie mai mare decat 0 si mai mic decat 17.");
+            return;
+        }
+
+        // conversie numar n in baza 10 in numar n in baza b
+        int[] vector = new int[100];
+        int i = 0;
+
+        while (n != 0)
+        {
+            vector[i] = n % b;
+            n = n / b;
+            i++;
+        }
+
+        // afisare numar n in baza b
+        Console.WriteLine($"Numarul n in baza b este: ");
+
+        for (int j = i - 1; j >= 0; j--)   // j = i - 1, i - 2, ..., 0
+        {
+            if (vector[j] < 10)
+            {
+                Console.Write($"{vector[j]}");
+            }
+            else
+            {
+                Console.Write($"{(char)(vector[j] + 55)}");   // conversie numar in litera
+            }
+        }
+
+        Console.ReadKey();
+    }
+
+    /*static void Problema18() { }
+
+    static void Problema19() { }
+
+    static void Problema20() { }
+
+    static void Problema21() { }
+
+    static void Problema22() { }
+
+    static void Problema23() { }
+
+    static void Problema24() { }
+
+    static void Problema25() { }
+
+    static void Problema26() { }
+
+    static void Problema27() { }
+
+    static void Problema28() { }
+
+    static void Problema29() { }
+
+    static void Problema30() { }
+
+    static void Problema31() { }*/
 }
 
